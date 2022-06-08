@@ -5,7 +5,7 @@ throw false
 }
 let pesan = args.join` `
 let oi = `🔔${pesan}`
-let teks = `*💢𝘔𝘈𝘚𝘚 𝘗𝘖𝘒𝘌💢*\n${oi}\n\n🧙‍♂️*𝘗𝘓𝘈𝘠𝘌𝘙𝘚:*\n`
+let teks = `*💢𝘔𝘈𝘚𝘚 𝘗𝘖𝘒𝘌💢*\n${oi}\n\n🧙🏻‍♂️ *𝘗𝘓𝘈𝘠𝘌𝘙𝘚:*\n`
 for (let mem of participants) {
 teks += `┣➥ @${mem.id.split('@')[0]}\n`}
 conn.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, )
