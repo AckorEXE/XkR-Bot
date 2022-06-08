@@ -4,8 +4,8 @@ global.dfail('admin', m, conn)
 throw false
 }
 let pesan = args.join` `
-let oi = `*𝕄𝔼ℕ𝕊𝔸𝕁𝔼:* ${pesan}`
-let teks = `*💥𝕄𝔸𝕊𝕊 ℙ𝕆𝕂𝔼💥*\n\n⭐ ${oi}\n\n🧙‍♂️ *ℙ𝕃𝔸𝕐𝔼ℝ𝕊:*\n`
+let oi = `🔔 ${pesan}`
+let teks = `*💢𝘔𝘈𝘚𝘚 𝘗𝘖𝘒𝘌💢*\n${oi}\n\n🧙‍♂️ *𝘗𝘓𝘈𝘠𝘌𝘙𝘚:*\n`
 for (let mem of participants) {
 teks += `┣➥ @${mem.id.split('@')[0]}\n`}
 conn.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, )
