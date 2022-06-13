@@ -15,6 +15,7 @@ let estado =`
 │ 💎 #mp _*<texto>*_
 │ 💎 #add _*<numero>*_
 │ 💎 #kick _*<numero>*_
+│ 💎 #gc _*<open / close>*_
 │ 💎 #link
 │ 💎 #estado
 ╰──────────
