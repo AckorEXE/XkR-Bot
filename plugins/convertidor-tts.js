@@ -18,7 +18,7 @@ try { res = await tts(text, lang) }
 catch (e) {
 m.reply(e + '')
 text = args.join(' ')
-if (!text) throw `*[❗] 𝘐𝘕𝘚𝘌𝘙𝘛𝘌 𝘜𝘕 𝘛𝘌𝘟𝘛𝘖 𝘗𝘈𝘙𝘈 𝘊𝘖𝘕𝘝𝘌𝘙𝘛𝘐𝘙 𝘈 𝘛𝘛𝘚,\n\n Ejemplo: ${usedPrefix + command} Saymox es puto*`
+if (!text) throw `*[❗] 𝘐𝘕𝘚𝘌𝘙𝘛𝘌 𝘜𝘕 𝘛𝘌𝘟𝘛𝘖 𝘗𝘈𝘙𝘈 𝘊𝘖𝘕𝘝𝘌𝘙𝘛𝘐𝘙 𝘈 𝘛𝘛𝘚* \n *Ejemplo:* \n *${usedPrefix + command} Saymox es puto*`
 res = await tts(text, defaultLang)
 } finally {
 if (res) conn.sendFile(m.chat, res, 'tts.opus', null, m, true)
