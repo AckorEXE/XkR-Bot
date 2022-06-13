@@ -18,6 +18,7 @@ let estado =`
 │ 💎 #gc _*<open / close>*_
 │ 💎 #link
 │ 💎 #estado
+│ 💎 #tts _*<texto>*_
 ╰──────────
 `.trim()
 
