@@ -13,7 +13,7 @@ throw `
 *┠┉↯ ${usedPrefix + command} cerrar*
 `.trim()
 await conn.groupSettingUpdate(m.chat, isClose)
-{m.reply('*[ ✔ ] 𝙶𝚁𝚄𝙿𝙾 𝙲𝙾𝙽𝙵𝙸𝙶𝚄𝚁𝙰𝙳𝙾 𝙲𝙾𝚁𝚁𝙴𝙲𝚃𝙰𝙼𝙴𝙽𝚃𝙴*')}
+{m.reply('*[✔] 𝘎𝘙𝘜𝘗𝘖 𝘊𝘖𝘕𝘍𝘐𝘎𝘜𝘙𝘈𝘋𝘖 𝘊𝘖𝘙𝘙𝘌𝘊𝘛𝘈𝘔𝘌𝘕𝘛𝘌.*')}
 }
 handler.help = ['gc open / close']
 handler.tags = ['gc']
