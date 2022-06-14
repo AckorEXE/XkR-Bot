@@ -22,7 +22,7 @@ let estado =`
 ╰──────────
 `.trim()
 
-conn.sendHydrated(m.chat, estado, wm, picture, 'wa.me/528251002140', 'CONTACTO', null, null, [], m)}
+conn.sendHydrated(m.chat, estado, wm, picture, 'wa.me/+528251002140', 'CONTACTO', null, null, [], m)}
 
 handler.help = ['menu']
 handler.tags = ['main']
