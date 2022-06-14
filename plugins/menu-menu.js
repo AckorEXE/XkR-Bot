@@ -13,8 +13,8 @@ let estado =`
 |
 │ ⭐ *𝘔𝘌𝘕𝘜 𝘋𝘌𝘓 𝘉𝘖𝘛:*
 │ 💎 #mp _*<texto>*_
-│ 💎 #add _*<numero>*_
-│ 💎 #kick _*<numero>*_
+│ 💎 #add _*<número>*_
+│ 💎 #kick _*<número>*_
 │ 💎 #gc _*<open / close>*_
 │ 💎 #link
 │ 💎 #estado
