@@ -3,7 +3,6 @@ let handler = async (m, { conn, command, usedPrefix }) => {
 let fecha = new Date();
 let dia = fecha.getDay();
   
-switch (dia) {
 if (dia === 1)
 throw `
 Hoy esta en venore.
