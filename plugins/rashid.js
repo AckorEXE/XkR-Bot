@@ -1,6 +1,6 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
   
-let fecha = new date();
+let fecha = new Date();
 let dia = fecha.getDay();
   
 switch (dia) {
