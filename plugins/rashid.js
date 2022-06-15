@@ -1,6 +1,5 @@
 import fs from 'fs'
-let handler = async (m, { conn, args }) => {
-    
+let handler = async (m, { conn, args, usedPrefix, command }) => {
 const day = [
     {"day": "Domingo", "local": "Carlin"},
     {"day":"Lunes", "local":"Svargrond"},
@@ -11,7 +10,7 @@ const day = [
     {"day":"Sábado", "local": "Edron"}
 ]
 
-const daterashid = new Date();
+const date = new Date();
 console.log(date.getUTCDay())
 
 days.forEach((e, i) => {
@@ -21,6 +20,6 @@ days.forEach((e, i) => {
 })
   
 handler.help = ['rashid']
-handler.tags = ['group']
-handler.command = /^(rashid)$/i
+handler.tags = ['tools']
+handler.command = /^g?rashid$/i
 export default handler
