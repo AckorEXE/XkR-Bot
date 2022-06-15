@@ -3,6 +3,15 @@ let picture = './Menu1.jpg'
 let name = await conn.getName(m.sender)
 let _uptime = process.uptime() * 1000
 let _muptime
+const day = [
+    {"day": "Domingo", "local": "Carlin"},
+    {"day":"Lunes", "local":"Svargrond"},
+    {"day":"Martes", "local":"Liberty Bay"},
+    {"day":"Miércoles", "local":"Port Hope"},
+    {"day":"Jueves", "local": "Ankrahmun"},
+    {"day":"Viernes", "local":"Darashia"},
+    {"day":"Sábado", "local": "Edron"}
+]
 if (process.send) { process.send('uptime')
 _muptime = await new Promise(resolve => { process.once('message', resolve) 
 setTimeout(resolve, 1000) }) * 1000}
@@ -21,6 +30,17 @@ let estado =`
 │ 💎 #tts _*<texto>*_
 ╰──────────
 `.trim()
+
+
+
+const date = new Date();
+console.log(date.getUTCDay())
+
+days.forEach((e, i) => {
+    if(i == date.getUTCDay()){
+        conn.reply(`Rashid at ${e.local} - ${e.day}`)
+    }
+})
 
 conn.sendHydrated(m.chat, estado, wm, picture, 'https://wa.me/528251002140/?text=Hola%20me%20interesa%20t%C3%BA%20servicio%20de%20bot.', 'CONTACTO', null, null, [], m)}
 
