@@ -21,6 +21,6 @@ days.forEach((e, i) => {
 })
   
 handler.help = ['rashid']
-handler.tags = ['main']
+handler.tags = ['group']
 handler.command = /^(rashid)$/i
 export default handler
