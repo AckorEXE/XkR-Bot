@@ -1,7 +1,7 @@
 import fs from 'fs'
 let handler = async (m, { conn, args }) => {
 let mens = m.chat
-  const days = [
+const days = [
     {"day": "Domingo", "local": "Carlin"},
     {"day":"Lunes", "local":"Svargrond"},
     {"day":"Martes", "local":"Liberty Bay"},
@@ -10,22 +10,17 @@ let mens = m.chat
     {"day":"Viernes", "local":"Darashia"},
     {"day":"Sábado", "local": "Edron"}
 ]
-  
-const date = new Date();
+
+const daterashid = new Date();
 console.log(date.getUTCDay())
 
 days.forEach((e, i) => {
     if(i == date.getUTCDay()){
-        conn.reply(m.chat, + `Rashid at ${e.local} - ${e.day}`, m)
+        console.log(`Rashid at ${e.local} - ${e.day}`)
     }
 })
   
-  
-  
 handler.help = ['rashid']
-handler.tags = ['rashidhelp']
-handler.command = /^rashid(gro?up)?$/i
-handler.group = true
-handler.admin = false
-handler.botAdmin = true
+handler.tags = ['main']
+handler.command = /^(rashid)$/i
 export default handler
