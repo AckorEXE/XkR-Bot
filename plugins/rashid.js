@@ -1,6 +1,6 @@
 import fs from 'fs'
 let handler = async (m, { conn, args }) => {
-let mens = m.chat
+    
 const days = [
     {"day": "Domingo", "local": "Carlin"},
     {"day":"Lunes", "local":"Svargrond"},
