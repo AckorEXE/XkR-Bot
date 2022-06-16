@@ -7,7 +7,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
 let lang = args[0]
 let text = args.slice(1).join(' ')
-if ((args[0] || '').length !== 2) {
+if ((args[0]) {
 lang = defaultLang
 text = args.join(' ')
 }
