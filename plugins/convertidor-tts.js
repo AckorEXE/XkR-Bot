@@ -14,7 +14,7 @@ text = args.join(' ')
 if (!text && m.quoted?.text) text = m.quoted.text
 
 let res
-try { res = await tts(text, lang) }
+try { res = await tts(text) }
 catch (e) {
 m.reply(e + '')
 text = args.join(' ')
