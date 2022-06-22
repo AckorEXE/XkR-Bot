@@ -248,17 +248,53 @@ export async function handler(chatUpdate) {
             if (chat) {
                 if (!('isBanned' in chat))
                     chat.isBanned = false
+                if (!('welcome' in chat))
+                    chat.welcome = true
+                if (!('detect' in chat))
+                    chat.detect = true
+                if (!('sWelcome' in chat))
+                    chat.sWelcome = ''
+                if (!('sBye' in chat))
+                    chat.sBye = ''
+                if (!('sPromote' in chat))
+                    chat.sPromote = ''
+                if (!('sDemote' in chat))
+                    chat.sDemote = ''
                 if (!('delete' in chat))
                     chat.delete = true
+                if (!('modohorny' in chat))
+                    chat.modohorny = false    
+                if (!('autosticker' in chat))
+                    chat.autosticker = false                    
+                if (!('audios' in chat))
+                    chat.audios = false                            
+                if (!('antiLink' in chat))
+                    chat.antiLink = false
+                if (!('antiLink2' in chat))
+                    chat.antiLink2 = false
                 if (!('viewonce' in chat))
                     chat.viewonce = false
+                if (!('antiToxic' in chat))
+                    chat.antiToxic = false
                 if (!isNumber(chat.expired))
                     chat.expired = 0
             } else
                 global.db.data.chats[m.chat] = {
                     isBanned: false,
+                    welcome: false,
+                    detect: false,
+                    sWelcome: false,
+                    sBye: false,
+                    sPromote: '',
+                    sDemote: '',
                     delete: true,
+                    modohorny: false,
+                    autosticker: false,
+                    audios: false,
+                    antiLink: false,
+                    antiLink2: false,
                     viewonce: false,
+                    antiToxic: false,
                     expired: 0,
                 }
             let settings = global.db.data.settings[this.user.jid]
@@ -453,6 +489,20 @@ export async function handler(chatUpdate) {
                     fail('unreg', m, this)
                     continue
                 }
+                m.isCommand = true
+                let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
+                if (xp > 200)
+                    m.reply('Ngecit -_-') // Hehehe
+                else
+                    m.exp += xp
+                if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
+                    this.reply(m.chat, `*[❗𝐈𝐍𝐅𝐎 ❗] 𝚂𝚄𝚂 𝙳𝙸𝙰𝙼𝙰𝙽𝚃𝙴𝚂 𝚂𝙴 𝙷𝙰𝙽 𝙰𝙶𝙾𝚃𝙰𝙳𝙾, 𝙿𝚄𝙴𝙳𝙴 𝙲𝙾𝙼𝙿𝚁𝙰𝚁 𝙼𝙰𝚂 𝚄𝚂𝙰𝙽𝙳𝙾 𝙴𝙻 𝙲𝙾𝙼𝙰𝙽𝙳𝙾 ${usedPrefix}buy <cantidad>*`, m)
+                    continue // Limit habis
+                }
+                if (plugin.level > _user.level) {
+                    this.reply(m.chat, `*[❗𝐈𝐍𝐅𝐎 ❗] 𝚂𝙴 𝚁𝙴𝚀𝚄𝙸𝙴𝚁𝙴 𝙴𝙻 𝙽𝙸𝚅𝙴𝙻 ${plugin.level} 𝙿𝙰𝚁𝙰 𝚄𝚂𝙰𝚁 𝙴𝚂𝚃𝙴 𝙲𝙾𝙼𝙰𝙽𝙳𝙾. 𝚃𝚄 𝙽𝙸𝚅𝙴𝙻 𝙴𝚂 ${_user.level}*`, m)
+                    continue // If the level has not been reached
+                }
                 let extra = {
                     match,
                     usedPrefix,
@@ -505,6 +555,8 @@ export async function handler(chatUpdate) {
                             console.error(e)
                         }
                     }
+                    if (m.limit)
+                        m.reply(+m.limit + ' 𝐃𝐈𝐀𝐌𝐀𝐍𝐓𝐄 💎 𝐔𝐒𝐀𝐃𝐎')
                 }
                 break
             }
@@ -564,17 +616,6 @@ export async function handler(chatUpdate) {
     }
 }
 
-global.dfail = (type, m, conn) => {
-    let msg = {
-        rowner: '*[❗] 𝘌𝘚𝘛𝘌 𝘊𝘖𝘔𝘈𝘕𝘋𝘖 𝘚𝘖𝘓𝘖 𝘗𝘜𝘌𝘋𝘌 𝘚𝘌𝘙 𝘜𝘛𝘐𝘓𝘐𝘡𝘈𝘋𝘖 𝘗𝘖𝘙 𝘌𝘓 𝘖𝘞𝘕𝘌𝘙 𝘋𝘌𝘓 𝘉𝘖𝘛*',
-        owner: '*[❗] 𝘌𝘚𝘛𝘌 𝘊𝘖𝘔𝘈𝘕𝘋𝘖 𝘚𝘖𝘓𝘖 𝘗𝘜𝘌𝘋𝘌 𝘚𝘌𝘙 𝘜𝘛𝘐𝘓𝘐𝘡𝘈𝘋𝘖 𝘗𝘖𝘙 𝘌𝘓 𝘖𝘞𝘕𝘌𝘙 𝘋𝘌𝘓 𝘉𝘖𝘛*',
-        group: '*[❗] 𝘌𝘚𝘛𝘌 𝘊𝘖𝘔𝘈𝘕𝘋𝘖 𝘚𝘖𝘓𝘖 𝘗𝘜𝘌𝘋𝘌 𝘚𝘌𝘙 𝘜𝘛𝘐𝘓𝘐𝘡𝘈𝘋𝘖 𝘌𝘕 𝘎𝘙𝘜𝘗𝘖𝘚*',
-        admin: '*[❗] 𝘌𝘚𝘛𝘌 𝘊𝘖𝘔𝘈𝘕𝘋𝘖 𝘚𝘖𝘓𝘖 𝘗𝘜𝘌𝘋𝘌 𝘚𝘌𝘙 𝘜𝘛𝘐𝘓𝘐𝘡𝘈𝘋𝘖 𝘗𝘖𝘙 𝘈𝘋𝘔𝘐𝘕𝘚 𝘋𝘌𝘓 𝘎𝘙𝘜𝘗𝘖*',
-        botAdmin: '*[❗] 𝘗𝘈𝘙𝘈 𝘗𝘖𝘋𝘌𝘙 𝘜𝘚𝘈𝘙 𝘌𝘚𝘛𝘌 𝘊𝘖𝘔𝘈𝘕𝘋𝘖 𝘌𝘚 𝘕𝘌𝘊𝘌𝘚𝘈𝘙𝘐𝘖 𝘘𝘜𝘌 𝘌𝘓 𝘉𝘖𝘛 𝘚𝘌𝘈 𝘈𝘋𝘔𝘐𝘕*',
-    }[type]
-    if (msg) return m.reply(msg)
-}
-
 /**
  * Handle groups participants update
  * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['group-participants.update']} groupsUpdate 
@@ -588,11 +629,65 @@ export async function participantsUpdate({ id, participants, action }) {
     if (global.db.data == null)
         await loadDatabase()
     let chat = global.db.data.chats[id] || {}
+    let text = ''
+    switch (action) {
+        case 'add':
+        case 'remove':
+            if (chat.welcome) {
+                let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
+                for (let user of participants) {
+                    let pp = './src/sinfoto.jpg'
+                    try {
+                        pp = await this.profilePictureUrl(user, 'image')
+                    } catch (e) {
+                    } finally {
+                        text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || '*𝚂𝙸𝙽 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝙲𝙸𝙾𝙽*') :
+                            (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
+                            let apii = await this.getFile(pp)
+                            this.sendHydrated(id, text, groupMetadata.subject, apii.data,                                                       'https://github.com/BrunoSobrino/TheMystic-Bot-MD', '𝙶𝙸𝚃𝙷𝚄𝙱', null, null, [
+                            [(action == 'add' ? '𝙱𝙸𝙴𝙽𝚅𝙴𝙽𝙸𝙳𝙾' : '𝙰𝙳𝙸𝙾𝚂'), 'ura'],    
+                            ['𝙼𝙴𝙽𝚄 𝙿𝚁𝙸𝙽𝙲𝙸𝙿𝙰𝙻', '/menu']
+                            ], '', { mentions: [user]})
+                           }
+                    }
+            }
+            break
+        case 'promote':
+        case 'daradmin':
+        case 'darpoder':
+            text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
+        case 'demote':
+        case 'quitarpoder':
+        case 'quitaradmin':
+            if (!text)
+                text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
+            text = text.replace('@user', '@' + participants[0].split('@')[0])
+            if (chat.detect)
+                this.sendMessage(id, { text, mentions: this.parseMention(text) })
+            break
+    }
+}
 
 /**
  * Handle groups update
  * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['groups.update']} groupsUpdate 
  */
+export async function groupsUpdate(groupsUpdate) {
+    if (opts['self'])
+        return
+    for (const groupUpdate of groupsUpdate) {
+        const id = groupUpdate.id
+        if (!id) continue
+        let chats = global.db.data.chats[id], text = ''
+        if (!chats?.detect) continue
+        if (groupUpdate.desc) text = (chats.sDesc || this.sDesc || conn.sDesc || '```Description has been changed to```\n@desc').replace('@desc', groupUpdate.desc)
+        if (groupUpdate.subject) text = (chats.sSubject || this.sSubject || conn.sSubject || '```Subject has been changed to```\n@subject').replace('@subject', groupUpdate.subject)
+        if (groupUpdate.icon) text = (chats.sIcon || this.sIcon || conn.sIcon || '```Icon has been changed to```').replace('@icon', groupUpdate.icon)
+        if (groupUpdate.revoke) text = (chats.sRevoke || this.sRevoke || conn.sRevoke || '```Group link has been changed to```\n@revoke').replace('@revoke', groupUpdate.revoke)
+        if (!text) continue
+        await this.sendMessage(id, { text, mentions: this.parseMention(text) })
+    }
+}
 
 export async function deleteUpdate(message) {
     try {
@@ -606,7 +701,32 @@ export async function deleteUpdate(message) {
         if (chat.delete)
             return
         await this.reply(msg.chat, `
+━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━
+*■ Nombre:* @${participant.split`@`[0]}
+*■ Enviando el mensaje..*
+*■ Para desactivar esta función escriba el comando:*
+*—◉ #disable antidelete*
+*—◉ #enable delete*
+━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━
+`.trim(), msg, {
+            mentions: [participant]
+        })
+        this.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
+    } catch (e) {
+        console.error(e)
+    }
+}
 
+global.dfail = (type, m, conn) => {
+    let msg = {
+        rowner: '*[❗] 𝘌𝘚𝘛𝘌 𝘊𝘖𝘔𝘈𝘕𝘋𝘖 𝘚𝘖𝘓𝘖 𝘗𝘜𝘌𝘋𝘌 𝘚𝘌𝘙 𝘜𝘛𝘐𝘓𝘐𝘡𝘈𝘋𝘖 𝘗𝘖𝘙 𝘌𝘓 𝘖𝘞𝘕𝘌𝘙 𝘋𝘌𝘓 𝘉𝘖𝘛*',
+        owner: '*[❗] 𝘌𝘚𝘛𝘌 𝘊𝘖𝘔𝘈𝘕𝘋𝘖 𝘚𝘖𝘓𝘖 𝘗𝘜𝘌𝘋𝘌 𝘚𝘌𝘙 𝘜𝘛𝘐𝘓𝘐𝘡𝘈𝘋𝘖 𝘗𝘖𝘙 𝘌𝘓 𝘖𝘞𝘕𝘌𝘙 𝘋𝘌𝘓 𝘉𝘖𝘛*',
+        group: '*[❗] 𝘌𝘚𝘛𝘌 𝘊𝘖𝘔𝘈𝘕𝘋𝘖 𝘚𝘖𝘓𝘖 𝘗𝘜𝘌𝘋𝘌 𝘚𝘌𝘙 𝘜𝘛𝘐𝘓𝘐𝘡𝘈𝘋𝘖 𝘌𝘕 𝘎𝘙𝘜𝘗𝘖𝘚*',
+        admin: '*[❗] 𝘌𝘚𝘛𝘌 𝘊𝘖𝘔𝘈𝘕𝘋𝘖 𝘚𝘖𝘓𝘖 𝘗𝘜𝘌𝘋𝘌 𝘚𝘌𝘙 𝘜𝘛𝘐𝘓𝘐𝘡𝘈𝘋𝘖 𝘗𝘖𝘙 𝘈𝘋𝘔𝘐𝘕𝘚 𝘋𝘌𝘓 𝘎𝘙𝘜𝘗𝘖*',
+        botAdmin: '*[❗] 𝘗𝘈𝘙𝘈 𝘗𝘖𝘋𝘌𝘙 𝘜𝘚𝘈𝘙 𝘌𝘚𝘛𝘌 𝘊𝘖𝘔𝘈𝘕𝘋𝘖 𝘌𝘚 𝘕𝘌𝘊𝘌𝘚𝘈𝘙𝘐𝘖 𝘘𝘜𝘌 𝘌𝘓 𝘉𝘖𝘛 𝘚𝘌𝘈 𝘈𝘋𝘔𝘐𝘕*',
+    }[type]
+    if (msg) return m.reply(msg)
+}
 
 let file = global.__filename(import.meta.url, true)
 watchFile(file, async () => {
