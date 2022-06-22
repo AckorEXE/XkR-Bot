@@ -6,5 +6,5 @@ conn.reply(m.chat, stdout.toString(), m)
 }}
 handler.help = ['update']
 handler.tags = ['owner']
-handler.command = /^update$/i
+handler.command = /^xkrupdate$/i
 export default handler
