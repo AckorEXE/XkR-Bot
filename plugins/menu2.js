@@ -22,8 +22,8 @@ let estado =`
 ╰──────────
 `.trim()
 
-conn.sendHydrated(estado, picture)}
-
+conn.sendHydrated(estado, picture)
+  
 handler.help = ['menu']
 handler.tags = ['main']
 handler.command = /^(min)$/i
