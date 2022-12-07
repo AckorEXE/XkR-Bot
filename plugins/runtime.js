@@ -1,4 +1,4 @@
-let handler = async (m, { conn }) => {
+let handler = async (m, { conn, command, usedPrefix }) => {
 let _uptime = process.uptime() * 1000
 let uptime = clockString(_uptime)
 m.reply(`
