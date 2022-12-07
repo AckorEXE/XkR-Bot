@@ -4,13 +4,13 @@ let _uptime = process.uptime() * 1000
 let uptime = clockString(_uptime)
 
 m.reply(`
-╭─[ *🤖𝕏𝕜ℝ-𝔹𝕠𝕥🤖* ]
-│ *👋 Hola ${name},*
-|
-│ ⭐ *𝘌𝘚𝘛𝘈𝘋𝘖 𝘋𝘌𝘓 𝘉𝘖𝘛:*
-│ ✅ BOT ACTIVO
-│ 🕓 TIEMPO ACTIVO: *${uptime}*
-╰──────────
+┌─ [ *🤖𝕏𝕜ℝ-𝔹𝕠𝕥🤖* ]
+├ *👋🏻 Hola ${name},*
+￨
+├ ⭐ *𝘌𝘚𝘛𝘈𝘋𝘖 𝘋𝘌𝘓 𝘉𝘖𝘛:*
+├ ✅ BOT ACTIVO
+├ 🕓 TIEMPO ACTIVO: *${uptime}*
+└───────────────
 `.trim())}
 
 
