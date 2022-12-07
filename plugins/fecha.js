@@ -1,7 +1,8 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
 
 var currentTime = new Date();
-m.reply(currentTime());
+  
+m.reply((currentTime));
 }
 
 handler.help = ['fecha']
