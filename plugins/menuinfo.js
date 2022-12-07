@@ -33,10 +33,7 @@ let menu =`
  ‖⇛ 🔖 _Términos y condiciones_
  ‖ ➥ ⧼ *_INFORMACIÓN DEL MENÚ_* ⧽ 
 ╰━〘 🐈🌟🐈🌟🐈🌟🐈🌟🐈 〙━╯
-𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨`.trim()
-conn.send3ButtonLoc(m.chat, (await fetch(pp)).buffer(), `
-⁖ᯓ፨҈༺ 𝙂𝙖𝙩𝙖𝘽𝙤𝙩 | 𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨 ༻፨҈ᯓ⁖
-`.trim(), menu
+`.trim()
 
 handler.command = /^(menuinfobot|menuinfo|infomenu|menúinfobot|menúinfo)$/i
 module.exports = handler
