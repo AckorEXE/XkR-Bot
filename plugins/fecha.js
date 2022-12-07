@@ -1,6 +1,6 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
 
-var currentDate = new Date();
+const date = new Date();
 date.setTimezoneOffset(-480)
 
 // Use the toLocaleString() method to format the date and time
