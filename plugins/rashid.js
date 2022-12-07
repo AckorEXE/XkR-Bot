@@ -23,7 +23,7 @@ let handler = async (m, { conn, command, usedPrefix }) => {
     }
      
       
-    m.reply((message) + "Fecha: " + Date);
+    m.reply(message());
     }
     
     handler.help = ['rashid']
