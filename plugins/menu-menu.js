@@ -22,7 +22,7 @@ let estado =`
 ╰──────────
 `.trim()
 
-conn.reply(m.chat, estado, wm, picture, m)}}
+conn.reply(m.chat, estado)}}
 
 handler.help = ['menu']
 handler.tags = ['main']
