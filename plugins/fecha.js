@@ -1,11 +1,11 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
 
-const date = new Date(date.UTC);
-const currentDay = date.getDay();
- 
-  
-m.reply((date.toLocaleString());
-}}
+var currentDate = new Date();
+
+// Use the toLocaleString() method to format the date and time
+// in a more human-readable way
+m.reply(currentDate.toLocaleString());
+}
 
 handler.help = ['fecha']
 handler.tags = ['main']
