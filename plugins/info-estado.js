@@ -10,7 +10,7 @@ m.reply(`
 ├ ⭐ *𝘌𝘚𝘛𝘈𝘋𝘖 𝘋𝘌𝘓 𝘉𝘖𝘛:*
 ├ ✅ BOT ACTIVO
 ├ 🕓 TIEMPO ACTIVO: *${uptime}*
-└───────────────
+└────────────
 `.trim())}
 
 
