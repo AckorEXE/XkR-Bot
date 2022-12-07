@@ -13,7 +13,7 @@ Usa estos comandos
 
 `.trim()
 
-conn.sendMessage(m.chat, estado, m)
+conn.sendMessage(m.chat, m)
 }
 
 
