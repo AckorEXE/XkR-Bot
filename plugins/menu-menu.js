@@ -1,6 +1,6 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
 
-let estado = `
+let menu = `
 ╭─[ *🤖𝕏𝕜ℝ-𝔹𝕠𝕥🤖* ]
 |
 │ ⭐ *𝘔𝘌𝘕𝘜 𝘋𝘌𝘓 𝘉𝘖𝘛:*
