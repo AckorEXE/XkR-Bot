@@ -14,7 +14,7 @@ let menu = `
 ╰──────────
 `.trim()
 
-conn.sendMessage(m.chat)
+conn.sendMessage(m.chat, menu)
 }
 
 handler.help = ['menu']
