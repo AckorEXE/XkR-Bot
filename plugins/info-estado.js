@@ -1,23 +1,20 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
-let picture = './Menu1.jpg'
 let name = await conn.getName(m.sender)
 let _uptime = process.uptime() * 1000
-let _muptime
-if (process.send) { process.send('uptime')
-_muptime = await new Promise(resolve => { process.once('message', resolve) 
-setTimeout(resolve, 1000) }) * 1000}
 let uptime = clockString(_uptime)
-let estado =`
+
+m.reply(`
 ╭─[ *🤖𝕏𝕜ℝ-𝔹𝕠𝕥🤖* ]
 │ *👋 Hola ${name},*
 |
 │ ⭐ *𝘌𝘚𝘛𝘈𝘋𝘖 𝘋𝘌𝘓 𝘉𝘖𝘛:*
 │ ✅ BOT ACTIVO
 │ 🕓 TIEMPO ACTIVO: *${uptime}*
-╰──────────
-`.trim()
 
-conn.sendHydrated(m.chat, estado, wm, picture, 'https://wa.me/528251002140/?text=Hola%20me%20interesa%20t%C3%BA%20servicio%20de%20bot.', 'CONTACTO', null, null, [], m)}
+https://wa.me/528251002140/?text=Hola%20me%20interesa%20t%C3%BA%20servicio%20de%20bot.
+╰──────────
+`.trim())}
+
 
 handler.help = ['estado']
 handler.tags = ['main']
