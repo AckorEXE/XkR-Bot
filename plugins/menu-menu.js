@@ -22,7 +22,8 @@ let estado =`
 ╰──────────
 `.trim()
 
-conn.sendMessage(m.chat, estado, { quoted: m })
+conn.sendMessage(m.chat, estado, m)
+}
 
 
 handler.help = ['menu']
