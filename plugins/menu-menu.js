@@ -1,7 +1,5 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
 let name = await conn.getName(m.sender)
-let _uptime = process.uptime() * 1000
-let uptime = clockString(_uptime)
 
 m.reply(`
 ╭─[ *🤖𝕏𝕜ℝ-𝔹𝕠𝕥🤖* ]
