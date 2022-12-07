@@ -10,8 +10,6 @@ m.reply(`
 │ ⭐ *𝘌𝘚𝘛𝘈𝘋𝘖 𝘋𝘌𝘓 𝘉𝘖𝘛:*
 │ ✅ BOT ACTIVO
 │ 🕓 TIEMPO ACTIVO: *${uptime}*
-
-https://wa.me/528251002140/?text=Hola%20me%20interesa%20t%C3%BA%20servicio%20de%20bot.
 ╰──────────
 `.trim())}
 
