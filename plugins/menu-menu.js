@@ -1,4 +1,3 @@
-let fs = require('fs')
 let handler = async (m, { conn, usedPrefix }) => {
 let pp = './Menu1.jpg'
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
@@ -70,29 +69,8 @@ let menu = `
 ┣ ඬ⃟💫 _${usedPrefix}unbanchat_
 ┗━━━━━━━━━━━━━┛
 `.trim()
-let buttons = [
-{ buttonId: '#owner', buttonText: { displayText: '💫 𝐎𝐖𝐍𝐄𝐑 💫' }, type: 1 },
-{ buttonId: '#runtime', buttonText: { displayText: '⏰ 𝐑𝐔𝐍𝐓𝐈𝐌𝐄 ⏰' }, type: 1 },
-{ buttonId: '#infohost', buttonText: { displayText: '👑 𝐈𝐍𝐅𝐎𝐇𝐎𝐒𝐓 👑' }, type: 1 }]
-let buttonMessage = {
-image: fs.readFileSync('./Menu1.jpg'),
-caption: menu.trim(),
-mentions: [m.sender],
-footer: `*${wm}*`,
-buttons: buttons,
-headerType: 4,
-contextInfo: {
-mentionedJid: [m.sender],
-externalAdReply: {
-showAdAttribution: true,
-mediaType: 'VIDEO',
-mediaUrl: null,
-title: '👑 𝐀𝐜𝐢𝐝𝐢𝐜𝐍𝐨𝐝𝐞𝐬 𝐇𝐨𝐬𝐭 👑',
-body: null,
-thumbnail: fs.readFileSync('./src/logo.png'),
-sourceUrl: `https://chat.whatsapp.com/F0fU7LSlBBcBm6ny5fVSuT`
-}}}
-conn.sendMessage(m.chat, buttonMessage, { quoted: m })
+
+conn.sendMessage(m.chat, m)
 }
 handler.help = ['menu', 'help', '?']
 handler.tags = ['general']
