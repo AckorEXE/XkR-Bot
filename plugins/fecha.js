@@ -5,7 +5,7 @@ const currentDay = date.getDay();
  
   
 m.reply((date.toLocaleString());
-}
+}}
 
 handler.help = ['fecha']
 handler.tags = ['main']
