@@ -22,8 +22,6 @@ let estado =`
 ╰──────────
 `.trim()
 
-conn.sendHydrated(m.chat, estado, wm, picture, 'https://wa.me/528251002140/?text=Hola%20me%20interesa%20t%C3%BA%20servicio%20de%20bot.', 'CONTACTO', null, null, [], m)}
-
 handler.help = ['menu']
 handler.tags = ['main']
 handler.command = /^(menu)$/i
