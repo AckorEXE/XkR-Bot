@@ -20,4 +20,5 @@ m.reply(`
 handler.help = ['menu']
 handler.tags = ['main']
 handler.command = /^(menu)$/i
+handler.group = true
 export default handler
