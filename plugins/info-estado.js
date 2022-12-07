@@ -21,6 +21,7 @@ m.reply(`
 handler.help = ['info']
 handler.tags = ['main']
 handler.command = /^(info)$/i
+handler.group = true
 export default handler
 
 function clockString(ms) {
