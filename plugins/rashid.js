@@ -1,6 +1,6 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
 
-const date = new Date(date.UTC);
+const date = new Date();
 const currentDay = date.getDay();
 
 let message;
