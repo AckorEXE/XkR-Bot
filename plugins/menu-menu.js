@@ -15,7 +15,7 @@ let estado = `
 `.trim()
 
 conn.sendMessage(m.chat, m)
-}}
+}
 
 handler.help = ['menu']
 handler.tags = ['main']
