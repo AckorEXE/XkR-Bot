@@ -16,7 +16,7 @@ let estado =`
 ╰──────────
 `.trim()
 
-conn.sendHydrated(m.chat, estado, wm, null, null, null, [], m)}
+conn.sendHydrated(m.chat, estado, m)}
 
 handler.help = ['menu']
 handler.tags = ['main']
