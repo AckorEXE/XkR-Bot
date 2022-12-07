@@ -1,7 +1,6 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
-let picture = './Menu1.jpg'
 
-let estado =`
+let estado = `
 ╭─[ *🤖𝕏𝕜ℝ-𝔹𝕠𝕥🤖* ]
 |
 │ ⭐ *𝘔𝘌𝘕𝘜 𝘋𝘌𝘓 𝘉𝘖𝘛:*
@@ -16,7 +15,7 @@ let estado =`
 `.trim()
 
 conn.sendMessage(m.chat, estado, m)
-}
+}}
 
 handler.help = ['menu']
 handler.tags = ['main']
