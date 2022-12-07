@@ -10,13 +10,17 @@ m.reply(`
 ├ ⭐ *𝘌𝘚𝘛𝘈𝘋𝘖 𝘋𝘌𝘓 𝘉𝘖𝘛:*
 ├ ✅ BOT ACTIVO
 ├ 🕓 TIEMPO: *${uptime}*
+├ 🖥️ *𝘊𝘙𝘌𝘈𝘋𝘖𝘙:*
+├ *👑 Ackor*
+├ 📞 *𝘊𝘖𝘕𝘛𝘈𝘊𝘛𝘖:*
+├ +528251002140
 └───────────
 `.trim())}
 
 
-handler.help = ['estado']
+handler.help = ['info']
 handler.tags = ['main']
-handler.command = /^(estado)$/i
+handler.command = /^(info)$/i
 export default handler
 
 function clockString(ms) {
