@@ -8,21 +8,21 @@ _muptime = await new Promise(resolve => { process.once('message', resolve)
 setTimeout(resolve, 1000) }) * 1000}
 let uptime = clockString(_uptime)
 let estado =`
-╭─[ *🤖𝕏𝕜ℝ-𝔹𝕠𝕥🤖* ]
-│ *👋 Hola ${name},*
+╭─[ *:robot:𝕏𝕜ℝ-𝔹𝕠𝕥:robot:* ]
+│ *:wave: Hola ${name},*
 |
-│ ⭐ *𝘔𝘌𝘕𝘜 𝘋𝘌𝘓 𝘉𝘖𝘛:*
-│ 💎 #mp _*<texto>*_
-│ 💎 #add _*<número>*_
-│ 💎 #kick _*<número>*_
-│ 💎 #gc _*<open / close>*_
-│ 💎 #link
-│ 💎 #estado
-│ 💎 #tts _*<texto>*_
+│ :star: *𝘔𝘌𝘕𝘜 𝘋𝘌𝘓 𝘉𝘖𝘛:*
+│ :gem: #mp _*<texto>*_
+│ :gem: #add _*<número>*_
+│ :gem: #kick _*<número>*_
+│ :gem: #gc _*<open / close>*_
+│ :gem: #link
+│ :gem: #estado
+│ :gem: #tts _*<texto>*_
 ╰──────────
 `.trim()
 
-conn.sendHydrated(m.chat, estado, wm, picture, 'https://wa.me/528251002140/?text=Hola%20me%20interesa%20t%C3%BA%20servicio%20de%20bot.', 'CONTACTO', null, null, [], m)}
+conn.sendHydrated(m.chat, estado, wm, picture,  null, null, null, null, [], m)}
 
 handler.help = ['menu']
 handler.tags = ['main']
