@@ -1,10 +1,7 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
 
 var currentTime = new Date();
-var formattedTime = currentTime.toLocaleString('en-US', {
-  timeZoneName: 'short'
-});
-m.reply((formattedTime)); // Outputs the current date and time, including the time zone
+m.reply(date); // Outputs the current date and time, including the time zone
 }
   
 handler.help = ['fecha']
