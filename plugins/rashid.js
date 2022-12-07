@@ -3,17 +3,6 @@ let handler = async (m, { conn, command, usedPrefix }) => {
     const date = new Date();
     const currentDay = date.getDay();
     
-    
-    console.log(event.getUTCDate());
-// expected output: 20
-
-event.setUTCDate(19);
-
-console.log(event.getUTCDate());
-// expected output: 19
-
-    
-    
     let message;
     
     if (currentDay === 0) {
