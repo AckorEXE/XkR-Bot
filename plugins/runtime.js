@@ -1,11 +1,21 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
 let _uptime = process.uptime() * 1000
+let name = await conn.getName(m.sender)
 let uptime = clockString(_uptime)
 
 m.reply(`
-*┌─〔 ＡＣＴＩＶＯ 〕*
-*├ 𝚃𝙸𝙴𝙼𝙿𝙾 𝙰𝙲𝚃𝙸𝚅𝙾: ${uptime}*
-*└───────────────*
+╭─[ *🤖𝕏𝕜ℝ-𝔹𝕠𝕥🤖* ]
+│ *👋🏻 Hola ${name},*
+|
+│ ⭐ *𝘔𝘌𝘕𝘜 𝘋𝘌𝘓 𝘉𝘖𝘛:*
+│ 💎 #mp _*<texto>*_
+│ 💎 #add _*<número>*_
+│ 💎 #kick _*<número>*_
+│ 💎 #gc _*<open / close>*_
+│ 💎 #link
+│ 💎 #estado
+│ 💎 #tts _*<texto>*_
+╰──────────
 `.trim())}
 
 
