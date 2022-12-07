@@ -1,5 +1,4 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
-let picture = './Menu1.jpg'
 let name = await conn.getName(m.sender)
 let _uptime = process.uptime() * 1000
 let uptime = clockString(_uptime)
@@ -18,7 +17,6 @@ m.reply(`
 │ 💎 #tts _*<texto>*_
 ╰──────────
 `.trim())}
-conn.sendMessage(picture)
 
 
 handler.help = ['menu']
