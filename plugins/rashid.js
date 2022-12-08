@@ -39,8 +39,8 @@ let handler = async (m, { conn, command, usedPrefix }) => {
     m.reply(dayName);
 }
 
-handler.help = ['hora']
+handler.help = ['rashid']
 handler.tags = ['main']
-handler.command = /^(hora)$/i
+handler.command = /^(rashid)$/i
 handler.group = true
 export default handler
