@@ -3,7 +3,7 @@ let handler = async (m, { conn, command, usedPrefix }) => {
 let chicago_datetime_str = new Date().toLocaleString("en-US", { timeZone: "America/Chicago" });
     
 // Add three hours to the current time
-    date.setHours(date.getHours() - 10);
+    chicago_datetime_str.setHours(chicago_datetime_str.getHours() - 10);
 
 var currentDay = date.getDay();
     
