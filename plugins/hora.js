@@ -1,9 +1,37 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
 
-var date = new Date(); // creates a new Date object representing the current date and time
-date.setHours(date.getHours() - 3); // subtracts three hours from the date
+let date = new Date();
 
-m.reply(date); // logs the resulting date to the console
+let dayOfWeek = date.getDay();
+
+// Get the name of the day of the week
+let dayName;
+switch (dayOfWeek) {
+  case 0:
+    dayName = "Sunday";
+    break;
+  case 1:
+    dayName = "Monday";
+    break;
+  case 2:
+    dayName = "Tuesday";
+    break;
+  case 3:
+    dayName = "Wednesday";
+    break;
+  case 4:
+    dayName = "Thursday";
+    break;
+  case 5:
+    dayName = "Friday";
+    break;
+  case 6:
+    dayName = "Saturday";
+    break;
+}
+
+
+m.reply(dayName);
 }
     
     handler.help = ['hora']
