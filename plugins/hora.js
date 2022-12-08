@@ -27,7 +27,7 @@ var currentDay = date.getDay();
     }
      
       
-    m.reply(message);
+    m.reply(message + date.toString());
     }
     
     handler.help = ['hora']
