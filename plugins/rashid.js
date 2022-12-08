@@ -1,7 +1,9 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
 
-       const date = new Date(2022, 11, 8, 7, 10, 0, null);
-       const currentDay = date.getDay();
+       var date = new Date();
+       date.toLocaleString("en-US", {timeZone: "Europe/Paris"}))
+       date.setHours(date.getHours() - 7);
+       var currentDay = date.getDay();
     
     let message;
     
