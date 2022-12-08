@@ -1,7 +1,7 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
 
 let date = new Date();
-
+date.setHours(date.getHours() - 11);
 let dayOfWeek = date.getDay();
 
 // Get the name of the day of the week
