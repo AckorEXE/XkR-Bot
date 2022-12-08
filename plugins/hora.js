@@ -4,7 +4,7 @@ let handler = async (m, { conn, command, usedPrefix }) => {
 var date = new Date();
 
 // Add three hours to the current time
-date.setHours(date.getHours() - 7);
+date.setHours(date.getHours() - 10);
 
 // Print the new date and time
 m.reply("New date and time: " + date.toString());
