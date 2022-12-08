@@ -1,7 +1,21 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
 
-    const date = new Date();
-    const currentDay = date.getDay();
+
+    
+    // Create a new Date object for the current time in CET
+var date = new Date(null, null, null, null, null, null, null);
+
+// Get the current date and time
+var year = date.getFullYear();
+var month = date.getMonth(); // 0-11
+var day = date.getDate();
+var hours = date.getHours();
+var minutes = date.getMinutes();
+var seconds = date.getSeconds();
+
+// Print the current date and time
+m.reply("Current date and time (CET): " + year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds);
+}
     
     let message;
     
