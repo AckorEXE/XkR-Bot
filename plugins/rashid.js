@@ -37,7 +37,7 @@ m.reply("Current date and time (CET): " + year + "-" + month + "-" + day + " " +
      
       
     m.reply(message);
-    }
+    
     
     handler.help = ['rashid']
     handler.tags = ['main']
