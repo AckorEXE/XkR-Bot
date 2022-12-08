@@ -1,10 +1,8 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
 
-// Create a new Date object for the current time
-var date = new Date();
+let chicago_datetime_str = new Date().toLocaleString("en-US", { timeZone: "America/Chicago" });
     
 // Add three hours to the current time
-date.setHours(date.getHours() - 10);
 
 var currentDay = date.getDay();
     
@@ -27,7 +25,7 @@ var currentDay = date.getDay();
     }
      
       
-    m.reply(message + date.toString());
+    m.reply(message);
     }
     
     handler.help = ['hora']
