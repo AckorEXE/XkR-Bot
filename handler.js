@@ -261,7 +261,7 @@ export async function handler(chatUpdate) {
                 if (!('sDemote' in chat))
                     chat.sDemote = ''
                 if (!('delete' in chat))
-                    chat.delete = true
+                    chat.delete = false
                 if (!('modohorny' in chat))
                     chat.modohorny = false    
                 if (!('autosticker' in chat))
@@ -273,7 +273,7 @@ export async function handler(chatUpdate) {
                 if (!('antiLink2' in chat))
                     chat.antiLink2 = false
                 if (!('viewonce' in chat))
-                    chat.viewonce = false
+                    chat.viewonce = true
                 if (!('antiToxic' in chat))
                     chat.antiToxic = false
                 if (!isNumber(chat.expired))
