@@ -700,10 +700,8 @@ export async function deleteUpdate(message) {
         let chat = global.db.data.chats[msg.chat] || {}
         if (chat.delete)
             return
-        await this.reply(msg.chat, 
-}
     }
-
+}
 
 global.dfail = (type, m, conn) => {
     let msg = {
